@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengumuman Hasil Seleksi - Putra & Putri Aliyah MAN Kapuas 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .gradient-bg {
+            background: #1e293b;
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(255, 255, 255, 0.6); }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid #fff;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #fff; }
+        }
+        
+        .result-card {
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .result-card.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .lolos {
+            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+            animation: successPulse 2s ease-in-out infinite;
+        }
+        
+        .tidak-lolos {
+            background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+        }
+        
+        @keyframes successPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        
+        .subtle-glow {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: subtleGlow 4s ease-in-out infinite;
+        }
+        
+        @keyframes subtleGlow {
+            0%, 100% { opacity: 0.3; transform: scale(0.5); }
+            50% { opacity: 0.8; transform: scale(1); }
+        }
+        
+        .countdown {
+            font-size: 4rem;
+            font-weight: 800;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+            animation: countdownPulse 1s ease-in-out infinite;
+        }
+        
+        @keyframes countdownPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .hidden-content {
+            display: none;
+        }
+        
+        .reveal {
+            animation: revealAnimation 1s ease-out forwards;
+        }
+        
+        @keyframes revealAnimation {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Subtle Glow Effects -->
+    <div class="subtle-glow" style="top: 15%; left: 15%; animation-delay: 0s;"></div>
+    <div class="subtle-glow" style="top: 25%; right: 20%; animation-delay: 2s;"></div>
+    <div class="subtle-glow" style="bottom: 35%; left: 25%; animation-delay: 4s;"></div>
+
+    <!-- Countdown Screen -->
+    <div id="countdownScreen" class="fixed inset-0 flex items-center justify-center z-50 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
+        <div class="text-center text-white">
+            <h1 class="text-xl md:text-3xl font-medium mb-8 typewriter opacity-90">Memuat Pengumuman...</h1>
+            <div id="countdownNumber" class="countdown text-white mb-8 opacity-80">3</div>
+            <div class="text-sm md:text-lg opacity-60">Mohon tunggu sebentar</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="hidden-content">
+        <!-- Header -->
+        <header class="text-center py-16 px-4">
+            <div class="floating">
+                <!-- Logo/Emblem -->
+                <div class="w-24 h-24 mx-auto mb-8 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center shadow-2xl">
+                    <div class="text-3xl">🏆</div>
+                </div>
+                
+                <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 opacity-90">
+                    Pengumuman Hasil Seleksi
+                </h1>
+                <h2 class="text-xl md:text-2xl font-medium text-blue-200 mb-3">
+                    Putra & Putri Aliyah MAN Kapuas
+                </h2>
+                <h3 class="text-lg md:text-xl font-light text-gray-300 mb-8">
+                    Tahun 2025 - Menuju Grand Final
+                </h3>
+                
+                <!-- Tanggal Bersejarah -->
+                <div class="mb-6">
+                    <div class="inline-block bg-white bg-opacity-10 backdrop-blur-sm rounded-full px-6 py-2 mb-4">
+                        <span class="text-sm text-yellow-300 font-medium">📅 Hari Bersejarah: 29 Agustus 2025</span>
+                    </div>
+                </div>
+                
+                <div class="max-w-2xl mx-auto bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl px-8 py-6 mb-6 border border-white border-opacity-20">
+                    <p class="text-sm md:text-base text-gray-200 leading-relaxed italic mb-4">
+                        "Setiap langkah yang telah kalian tempuh adalah bagian dari perjalanan menuju impian. 
+                        Hasil hari ini adalah cerminan dari dedikasi dan kerja keras yang telah kalian berikan."
+                    </p>
+                    <div class="text-xs text-yellow-200 font-medium">
+                        ~ Pesan dari Keluarga Besar MAN Kapuas ~
+                    </div>
+                </div>
+                
+                <!-- Statistik Singkat -->
+                <div class="flex justify-center space-x-8 mb-6">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-green-400">6</div>
+                        <div class="text-xs text-gray-400">Lolos</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-red-400">3</div>
+                        <div class="text-xs text-gray-400">Tidak Lolos</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-blue-400">9</div>
+                        <div class="text-xs text-gray-400">Total Peserta</div>
+                    </div>
+                </div>
+                
+                <div class="text-sm text-gray-400">
+                    🌟 Kenang-kenangan Terindah Dimulai Dari Sini 🌟
+                </div>
+            </div>
+        </header>
+
+        <!-- Personal Search Section -->
+        <div class="max-w-3xl mx-auto px-4 mb-16">
+            <div class="bg-white bg-opacity-5 backdrop-blur-md rounded-3xl p-8 border border-white border-opacity-20">
+                <div class="text-center mb-6">
+                    <h3 class="text-xl font-medium text-white mb-3">Temukan Hasil Anda</h3>
+                    <p class="text-sm text-gray-300 opacity-80">Masukkan nama lengkap atau nomor register untuk melihat hasil seleksi Anda secara pribadi</p>
+                </div>
+                <div class="space-y-4">
+                    <input 
+                        type="text" 
+                        id="searchName" 
+                        placeholder="Nama lengkap Anda..."
+                        class="w-full px-6 py-4 rounded-2xl bg-white bg-opacity-10 text-white placeholder-gray-400 border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300"
+                    >
+                    <input 
+                        type="text" 
+                        id="searchRegister" 
+                        placeholder="Nomor register (5 digit)..."
+                        class="w-full px-6 py-4 rounded-2xl bg-white bg-opacity-10 text-white placeholder-gray-400 border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300"
+                    >
+                    <button 
+                        onclick="searchParticipant()" 
+                        class="w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium rounded-2xl transition-all duration-300 transform hover:scale-[1.02]"
+                    >
+                        Lihat Hasil Saya
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="max-w-4xl mx-auto px-4 pb-12">
+            <div id="resultsContainer" class="flex justify-center">
+                <!-- Individual result will be shown here -->
+            </div>
+        </div>
+
+        <!-- Inspirational Footer -->
+        <div class="max-w-4xl mx-auto px-4 pb-16">
+            <div class="bg-white bg-opacity-5 backdrop-blur-md rounded-3xl p-8 text-center border border-white border-opacity-10 relative overflow-hidden">
+                <!-- Ornamen Atas -->
+                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2">
+                    <div class="flex space-x-2">
+                        <div class="w-2 h-2 bg-yellow-400 rounded-full opacity-60"></div>
+                        <div class="w-2 h-2 bg-blue-400 rounded-full opacity-60"></div>
+                        <div class="w-2 h-2 bg-green-400 rounded-full opacity-60"></div>
+                    </div>
+                </div>
+                
+                <h3 class="text-xl font-medium text-white mb-8 flex items-center justify-center">
+                    <span class="mr-3">💌</span>
+                    Pesan untuk Semua Peserta
+                    <span class="ml-3">💌</span>
+                </h3>
+                
+                <div class="space-y-6 text-gray-300">
+                    <div class="bg-white bg-opacity-5 rounded-2xl p-6 border-l-4 border-yellow-400">
+                        <p class="text-sm leading-relaxed">
+                            "Apapun hasilnya hari ini, ingatlah bahwa setiap usaha yang telah kalian lakukan tidak akan pernah sia-sia. 
+                            Kalian telah menunjukkan keberanian untuk mencoba dan itu sudah merupakan kemenangan tersendiri."
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white bg-opacity-5 rounded-2xl p-6 border-l-4 border-blue-400">
+                        <p class="text-sm leading-relaxed italic">
+                            "Bagi yang lolos, ini adalah awal dari perjalanan baru. Bagi yang belum berhasil kali ini, 
+                            jangan pernah menyerah karena kesempatan selalu ada untuk mereka yang terus berusaha."
+                        </p>
+                    </div>
+                    
+                    <!-- Kenang-kenangan -->
+                    <div class="bg-gradient-to-r from-purple-500 to-pink-500 bg-opacity-20 rounded-2xl p-6 mt-8">
+                        <h4 class="text-lg font-medium text-white mb-4">🎭 Momen Bersejarah</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">📚</div>
+                                <div class="text-gray-200">Persiapan</div>
+                                <div class="text-gray-400">Penuh dedikasi</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">🤝</div>
+                                <div class="text-gray-200">Persahabatan Terjalin</div>
+                                <div class="text-gray-400">Ikatan yang tak terlupakan</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">🌟</div>
+                                <div class="text-gray-200">Mimpi Terwujud</div>
+                                <div class="text-gray-400">Langkah menuju masa depan</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tanda Tangan Resmi -->
+                    <div class="mt-8 pt-6 border-t border-white border-opacity-20">
+                        <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                            <div class="text-left">
+                                <p class="text-xs text-gray-400 mb-1">Dengan hormat,</p>
+                                <p class="text-sm font-medium text-white">Panitia Seleksi Putra & Putri Aliyah</p>
+                                <p class="text-xs text-gray-400">MAN Kapuas 2025</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xs text-gray-400 mb-1">Kapuas, 29 Agustus 2025</p>
+                                <div class="w-20 h-8 bg-white bg-opacity-10 rounded flex items-center justify-center">
+                                    <span class="text-xs text-gray-300">🖋️ TTD</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-4 border-t border-white border-opacity-20">
+                        <p class="text-xs text-gray-400 flex items-center justify-center">
+                            <span class="mr-2">🏫</span>
+                            MAN Kapuas - Menuju Prestasi Gemilang
+                            <span class="ml-2">🏫</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Ornamen Bawah -->
+                <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-2">
+                    <div class="flex space-x-2">
+                        <div class="w-2 h-2 bg-green-400 rounded-full opacity-60"></div>
+                        <div class="w-2 h-2 bg-blue-400 rounded-full opacity-60"></div>
+                        <div class="w-2 h-2 bg-yellow-400 rounded-full opacity-60"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const participants = [
+            // YANG LOLOS
+            { name: "Muhammad Nadzhar", class: "XI-9", status: "Lolos - Masuk Grand Final", register: "76584" },
+            { name: "Helsa Cahlya Mentari", class: "XI-3", status: "Lolos - Masuk Grand Final", register: "76492" },
+            { name: "Denis Arianto Supramaji", class: "XI-4", status: "Lolos - Masuk Grand Final", register: "12138" },
+            { name: "Zulfa Mahya Mufidah Susanto", class: "XI-4", status: "Lolos - Masuk Grand Final", register: "64832" },
+            { name: "Nabila Wati", class: "XI-4", status: "Lolos - Masuk Grand Final", register: "10374" },
+            { name: "Rama Dhia Anas Radithya", class: "XI-5", status: "Lolos - Masuk Grand Final", register: "75830" },
+            // YANG TIDAK LOLOS
+            { name: "Septiany Ramadhaniah", class: "XI-5", status: "Tidak Lolos", register: "74529" },
+            { name: "Ahmad Nur Rasyid", class: "XI-5", status: "Tidak Lolos", register: "75420" },
+            { name: "Mira Maulida", class: "XI-9", status: "Tidak Lolos", register: "54632" }
+        ];
+
+        let resultsRevealed = false;
+
+        // Countdown functionality
+        let countdown = 3;
+        const countdownElement = document.getElementById('countdownNumber');
+        const countdownScreen = document.getElementById('countdownScreen');
+        const mainContent = document.getElementById('mainContent');
+
+        const countdownInterval = setInterval(() => {
+            countdown--;
+            if (countdown > 0) {
+                countdownElement.textContent = countdown;
+            } else if (countdown === 0) {
+                countdownElement.textContent = "GO!";
+                countdownElement.style.color = "#fbbf24";
+            } else {
+                clearInterval(countdownInterval);
+                countdownScreen.style.opacity = "0";
+                setTimeout(() => {
+                    countdownScreen.style.display = "none";
+                    mainContent.classList.remove('hidden-content');
+                    mainContent.classList.add('reveal');
+                }, 500);
+            }
+        }, 1000);
+
+        function createResultCard(participant) {
+            const isLolos = participant.status === "Lolos - Masuk Grand Final";
+            const statusClass = isLolos ? "lolos" : "tidak-lolos";
+            
+            return `
+                <div class="result-card ${statusClass} rounded-3xl p-8 text-white shadow-2xl max-w-lg w-full border border-white border-opacity-20">
+                    <!-- Header dengan Ornamen -->
+                    <div class="text-center mb-6 relative">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-4">
+                            <div class="w-8 h-1 bg-white bg-opacity-30 rounded-full"></div>
+                        </div>
+                        
+                        <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-white bg-opacity-20 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-white to-transparent opacity-20"></div>
+                            <div class="text-4xl relative z-10">${isLolos ? '🏆' : '🌸'}</div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h3 class="font-bold text-2xl mb-2 tracking-wide">${participant.name}</h3>
+                            <div class="flex justify-center items-center space-x-4 text-sm opacity-90">
+                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full">Kelas ${participant.class}</span>
+                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full">No. ${participant.register}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Status Utama -->
+                    <div class="text-center mb-6">
+                        <div class="bg-white bg-opacity-15 rounded-2xl py-6 px-6 mb-4 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"></div>
+                            
+                            <div class="font-bold text-2xl mb-3 tracking-wider">
+                                ${isLolos ? '🎉 SELAMAT! 🎉' : '💝 TERIMA KASIH 💝'}
+                            </div>
+                            
+                            <div class="text-sm leading-relaxed mb-4">
+                                ${isLolos ? 
+                                    'Anda berhasil lolos dan masuk ke <strong>Grand Final</strong>! Perjalanan menuju impian dimulai dari sini. Tetap semangat dan berikan yang terbaik untuk MAN Kapuas!' : 
+                                    'Meskipun belum berhasil kali ini, usaha dan dedikasi Anda sangat berharga bagi MAN Kapuas. Jangan menyerah, kesempatan lain selalu menanti mereka yang pantang menyerah!'
+                                }
+                            </div>
+                            
+                            ${isLolos ? 
+                                '<div class="inline-block bg-yellow-400 bg-opacity-30 text-yellow-100 px-4 py-2 rounded-full text-xs font-medium">✨ FINALIS TERPILIH ✨</div>' : 
+                                '<div class="inline-block bg-pink-400 bg-opacity-30 text-pink-100 px-4 py-2 rounded-full text-xs font-medium">💪 PEJUANG SEJATI 💪</div>'
+                            }
+                        </div>
+                    </div>
+                    
+                    <!-- Pesan Inspiratif -->
+                    <div class="text-center">
+                        <div class="bg-white bg-opacity-10 rounded-xl py-4 px-4 mb-4">
+                            <div class="text-xs text-gray-200 italic leading-relaxed">
+                                ${isLolos ? 
+                                    '"Kesuksesan adalah hasil dari persiapan, kerja keras, dan belajar dari kegagalan. Kini saatnya tunjukkan yang terbaik!"' : 
+                                    '"Setiap akhir adalah awal yang baru. Tetap percaya pada diri sendiri dan jangan pernah berhenti bermimpi."'
+                                }
+                            </div>
+                        </div>
+                        
+                        <!-- Tanda Tangan Digital -->
+                        <div class="border-t border-white border-opacity-20 pt-4">
+                            <div class="text-xs text-gray-300 mb-2">Keluarga Besar MAN Kapuas</div>
+                            <div class="text-xs text-gray-400">Dengan bangga mempersembahkan</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ornamen Bawah -->
+                    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-4">
+                        <div class="w-8 h-1 bg-white bg-opacity-30 rounded-full"></div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function searchParticipant() {
+            const nameQuery = document.getElementById('searchName').value.toLowerCase().trim();
+            const registerQuery = document.getElementById('searchRegister').value.trim();
+            
+            if (!nameQuery && !registerQuery) {
+                showMessage('Silakan masukkan nama lengkap atau nomor register Anda.', 'info');
+                return;
+            }
+
+            const found = participants.find(p => 
+                (nameQuery && p.name.toLowerCase().includes(nameQuery)) ||
+                (registerQuery && p.register === registerQuery)
+            );
+
+            if (found) {
+                showPersonalResult(found);
+            } else {
+                showMessage('Data tidak ditemukan. Pastikan nama atau nomor register yang Anda masukkan benar.', 'error');
+            }
+        }
+
+        function showPersonalResult(participant) {
+            const container = document.getElementById('resultsContainer');
+            container.innerHTML = createResultCard(participant);
+            
+            // Trigger animation
+            setTimeout(() => {
+                const card = container.querySelector('.result-card');
+                if (card) {
+                    card.classList.add('show');
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 100);
+        }
+
+        function showMessage(message, type) {
+            const container = document.getElementById('resultsContainer');
+            const bgColor = type === 'error' ? 'bg-red-500' : 'bg-blue-500';
+            
+            container.innerHTML = `
+                <div class="max-w-md w-full bg-white bg-opacity-10 backdrop-blur-md rounded-3xl p-8 text-center border border-white border-opacity-20">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full ${bgColor} bg-opacity-30 flex items-center justify-center">
+                        <div class="text-2xl">${type === 'error' ? '⚠️' : 'ℹ️'}</div>
+                    </div>
+                    <p class="text-white text-sm leading-relaxed">${message}</p>
+                </div>
+            `;
+        }
+
+
+
+        // Allow Enter key for search
+        document.getElementById('searchName').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') searchParticipant();
+        });
+        
+        document.getElementById('searchRegister').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') searchParticipant();
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'976ad034c4ebfdfb',t:'MTc1NjQ1NzU1Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
