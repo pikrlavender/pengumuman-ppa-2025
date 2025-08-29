@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengumuman Resmi - Hasil Seleksi Putra & Putri Aliyah MAN Kapuas 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .dramatic-countdown {
+            font-size: 8rem;
+            font-weight: 900;
+            text-shadow: 0 0 50px rgba(255, 255, 255, 0.8);
+            animation: dramaticPulse 1s ease-in-out infinite;
+        }
+        
+        @keyframes dramaticPulse {
+            0%, 100% { transform: scale(1); filter: brightness(1); }
+            50% { transform: scale(1.1); filter: brightness(1.3); }
+        }
+        
+        .typewriter-dramatic {
+            overflow: hidden;
+            border-right: 4px solid #fbbf24;
+            white-space: nowrap;
+            animation: typing 4s steps(50, end), blink-caret 1s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #fbbf24; }
+        }
+        
+        .reveal-card {
+            transform: translateY(100px) rotateX(45deg);
+            opacity: 0;
+            transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .reveal-card.show {
+            transform: translateY(0) rotateX(0deg);
+            opacity: 1;
+        }
+        
+        .finalist-card {
+            background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+            animation: successGlow 3s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .finalist-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shine 3s ease-in-out infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+            100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+        }
+        
+        @keyframes successGlow {
+            0%, 100% { box-shadow: 0 0 30px rgba(16, 185, 129, 0.4); }
+            50% { box-shadow: 0 0 60px rgba(16, 185, 129, 0.8); }
+        }
+        
+        .eliminated-card {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%);
+            animation: eliminatedPulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes eliminatedPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(220, 38, 38, 0.6); }
+        }
+        
+        .crown-animation {
+            animation: crownFloat 3s ease-in-out infinite;
+        }
+        
+        @keyframes crownFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+        
+        .dramatic-reveal {
+            animation: dramaticReveal 2s ease-out forwards;
+        }
+        
+        @keyframes dramaticReveal {
+            0% { 
+                opacity: 0; 
+                transform: scale(0.3) rotateY(180deg);
+                filter: blur(10px);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.1) rotateY(90deg);
+                filter: blur(5px);
+            }
+            100% { 
+                opacity: 1; 
+                transform: scale(1) rotateY(0deg);
+                filter: blur(0px);
+            }
+        }
+        
+        .tension-build {
+            animation: tensionBuild 5s ease-in-out infinite;
+        }
+        
+        @keyframes tensionBuild {
+            0%, 100% { transform: scale(1); filter: brightness(1); }
+            25% { transform: scale(1.02); filter: brightness(1.1); }
+            50% { transform: scale(0.98); filter: brightness(0.9); }
+            75% { transform: scale(1.01); filter: brightness(1.05); }
+        }
+        
+        .spotlight {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: spotlight 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes spotlight {
+            0%, 100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.3; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.6; }
+        }
+        
+        .hidden-content {
+            display: none;
+        }
+        
+        .final-reveal {
+            animation: finalReveal 1.5s ease-out forwards;
+        }
+        
+        @keyframes finalReveal {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #fbbf24;
+            border-radius: 50%;
+            animation: particle 4s ease-in-out infinite;
+        }
+        
+        @keyframes particle {
+            0%, 100% { opacity: 0; transform: translateY(0px); }
+            50% { opacity: 1; transform: translateY(-100px); }
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Particles -->
+    <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+    <div class="particle" style="top: 30%; right: 15%; animation-delay: 1s;"></div>
+    <div class="particle" style="bottom: 40%; left: 20%; animation-delay: 2s;"></div>
+    <div class="particle" style="bottom: 20%; right: 25%; animation-delay: 3s;"></div>
+
+    <!-- Dramatic Countdown Screen -->
+    <div id="countdownScreen" class="fixed inset-0 flex items-center justify-center z-50 bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900">
+        <div class="spotlight" style="top: 50%; left: 50%;"></div>
+        <div class="text-center text-white relative z-10">
+            <h1 class="text-2xl md:text-4xl font-bold mb-8 typewriter-dramatic opacity-90">
+                PENGUMUMAN RESMI AKAN DIMULAI...
+            </h1>
+            <div id="countdownNumber" class="dramatic-countdown text-yellow-400 mb-8">5</div>
+            <div class="text-lg md:text-xl opacity-70 tension-build">
+                Bersiaplah untuk momen bersejarah
+            </div>
+            <div class="mt-8 text-sm opacity-50">
+                🎭 Detik-detik penentuan 🎭
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="hidden-content">
+        <!-- Dramatic Header -->
+        <header class="text-center py-20 px-4 relative">
+            <div class="spotlight" style="top: 30%; left: 50%;"></div>
+            
+            <div class="relative z-10">
+                <!-- Crown Animation -->
+                <div class="w-32 h-32 mx-auto mb-8 crown-animation">
+                    <div class="w-full h-full rounded-full bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-500 flex items-center justify-center shadow-2xl relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-white to-transparent opacity-20"></div>
+                        <div class="text-5xl relative z-10">👑</div>
+                    </div>
+                </div>
+                
+                <h1 class="text-4xl md:text-7xl font-black text-white mb-6 opacity-95 tracking-wider">
+                    PENGUMUMAN RESMI
+                </h1>
+                <h2 class="text-2xl md:text-4xl font-bold text-yellow-400 mb-4 tracking-wide">
+                    HASIL SELEKSI FINAL
+                </h2>
+                <h3 class="text-xl md:text-2xl font-medium text-blue-200 mb-8">
+                    Putra & Putri Aliyah MAN Kapuas 2025
+                </h3>
+                
+                <!-- Dramatic Date -->
+                <div class="mb-8">
+                    <div class="inline-block bg-gradient-to-r from-red-600 to-red-700 rounded-full px-8 py-3 mb-6 shadow-2xl">
+                        <span class="text-lg text-white font-bold">⚡ HARI PENENTUAN: 29 Agustus 2025 ⚡</span>
+                    </div>
+                </div>
+                
+                <!-- Tension Building Quote -->
+                <div class="max-w-3xl mx-auto bg-black bg-opacity-30 backdrop-blur-sm rounded-3xl px-10 py-8 mb-8 border border-yellow-400 border-opacity-30">
+                    <p class="text-lg md:text-xl text-gray-200 leading-relaxed italic mb-6 font-medium">
+                        "Momen ini akan menentukan siapa yang akan melangkah ke panggung grand final. 
+                        Setiap nama yang akan dibacakan telah melalui perjuangan yang luar biasa."
+                    </p>
+                    <div class="text-sm text-yellow-300 font-bold tracking-wider">
+                        ~ DETIK-DETIK MENEGANGKAN ~
+                    </div>
+                </div>
+                
+                <!-- Dramatic Stats -->
+                <div class="flex justify-center space-x-12 mb-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-black text-green-400 mb-2">6</div>
+                        <div class="text-sm text-gray-300 font-medium">FINALIS</div>
+                        <div class="text-xs text-green-300">Masuk Grand Final</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-black text-red-400 mb-2">3</div>
+                        <div class="text-sm text-gray-300 font-medium">FINALIS</div>
+                        <div class="text-xs text-red-300">Tereleminasi</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-black text-blue-400 mb-2">9</div>
+                        <div class="text-sm text-gray-300 font-medium">PEJUANG</div>
+                        <div class="text-xs text-blue-300">Telah Berjuang</div>
+                    </div>
+                </div>
+                
+                <div class="text-lg text-gray-300 font-medium">
+                    ⚔️ SIAPA YANG AKAN BERTAHAN? ⚔️
+                </div>
+            </div>
+        </header>
+
+        <!-- Reveal Button -->
+        <div class="text-center mb-16">
+            <button 
+                id="revealButton" 
+                onclick="startDramaticReveal()" 
+                class="px-12 py-6 bg-gradient-to-r from-red-600 via-red-700 to-red-800 hover:from-red-700 hover:via-red-800 hover:to-red-900 text-white font-black text-xl rounded-full transition-all duration-500 transform hover:scale-110 shadow-2xl border-2 border-yellow-400"
+            >
+                🎭 BUKA HASIL LENGKAP 🎭
+            </button>
+            <div class="mt-4 text-sm text-gray-400">
+                Klik untuk melihat siapa saja yang lolos ke grand final
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="resultsSection" class="hidden-content max-w-6xl mx-auto px-4 pb-16">
+            <!-- Finalists Section -->
+            <div class="mb-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-5xl font-black text-green-400 mb-4 tracking-wider">
+                        🏆 FINALIS TERPILIH 🏆
+                    </h2>
+                    <p class="text-lg text-gray-300 font-medium">
+                        Mereka yang berhasil melangkah ke Grand Final
+                    </p>
+                    <div class="w-32 h-1 bg-gradient-to-r from-green-400 to-yellow-400 mx-auto mt-4 rounded-full"></div>
+                </div>
+                
+                <div id="finalistsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Finalists will be populated here -->
+                </div>
+            </div>
+
+            <!-- Eliminated Section -->
+            <div class="mb-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-5xl font-black text-red-400 mb-4 tracking-wider">
+                        💔 TERELIMINASI 💔
+                    </h2>
+                    <p class="text-lg text-gray-300 font-medium">
+                        Perjuangan berakhir, namun kenangan akan terus hidup
+                    </p>
+                    <div class="w-32 h-1 bg-gradient-to-r from-red-400 to-pink-400 mx-auto mt-4 rounded-full"></div>
+                </div>
+                
+                <div id="eliminatedContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Eliminated will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Epic Footer -->
+        <div class="max-w-6xl mx-auto px-4 pb-20">
+            <div class="bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 rounded-3xl p-12 text-center border border-yellow-400 border-opacity-30 relative overflow-hidden">
+                <div class="spotlight" style="top: 50%; left: 50%;"></div>
+                
+                <div class="relative z-10">
+                    <h3 class="text-2xl md:text-4xl font-black text-white mb-8 flex items-center justify-center">
+                        <span class="mr-4">🎭</span>
+                        PESAN
+                        <span class="ml-4">🎭</span>
+                    </h3>
+                    
+                    <div class="space-y-8 text-gray-200">
+                        <div class="bg-black bg-opacity-30 rounded-2xl p-8 border-l-4 border-yellow-400">
+                            <p class="text-lg leading-relaxed font-medium">
+                                "Hari ini, sejarah baru telah terukir. Enam nama telah dipilih untuk mewakili 
+                                kelas masing-masing di panggung grand final. Mereka adalah cerminan dari dedikasi, 
+                                kerja keras, dan semangat pantang menyerah."
+                            </p>
+                        </div>
+                        
+                        <div class="bg-black bg-opacity-30 rounded-2xl p-8 border-l-4 border-red-400">
+                            <p class="text-lg leading-relaxed italic font-medium">
+                                "Bagi yang tereliminasi, kalian tetap adalah pahlawan dalam cerita ini. 
+                                Keberanian untuk mencoba dan berjuang hingga titik ini sudah merupakan kemenangan tersendiri. 
+                                Mimpi kalian tidak berakhir di sini."
+                            </p>
+                        </div>
+                        
+                        <!-- Hall of Fame -->
+                        <div class="bg-gradient-to-r from-yellow-600 to-orange-600 bg-opacity-20 rounded-2xl p-8 mt-12">
+                            <h4 class="text-2xl font-black text-yellow-400 mb-6">🏛️ HALL OF FAME 2025</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                                <div class="text-center">
+                                    <div class="text-3xl mb-3">⚔️</div>
+                                    <div class="text-white font-bold">PERJUANGAN EPIK</div>
+                                    <div class="text-gray-300">9 pejuang telah berjuang</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-3xl mb-3">👑</div>
+                                    <div class="text-white font-bold">MAHKOTA KEMENANGAN</div>
+                                    <div class="text-gray-300">6 finalis terpilih</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-3xl mb-3">🌟</div>
+                                    <div class="text-white font-bold">KISAH TERCIPTA</div>
+                                    <div class="text-gray-300">Cerita baru dimulai</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Official Signature -->
+                        <div class="mt-12 pt-8 border-t border-yellow-400 border-opacity-30">
+                            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                                <div class="text-left">
+                                    <p class="text-sm text-gray-400 mb-2">Dengan penuh kebanggaan,</p>
+                                    <p class="text-lg font-bold text-white">Panitia Seleksi Putra & Putri Aliyah</p>
+                                    <p class="text-sm text-gray-400">MAN Kapuas 2025</p>
+                                    <p class="text-xs text-yellow-400 mt-2">🏆 "Menciptakan Kisah Baru" 🏆</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm text-gray-400 mb-2">Kapuas, 29 Agustus 2025</p>
+                                    <div class="w-24 h-12 bg-yellow-400 bg-opacity-20 rounded-lg flex items-center justify-center border border-yellow-400 border-opacity-50">
+                                        <span class="text-sm text-yellow-300 font-bold">✍️ RESMI</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 pt-6 border-t border-yellow-400 border-opacity-30">
+                            <p class="text-sm text-gray-400 flex items-center justify-center font-medium">
+                                <span class="mr-3">🏫</span>
+                                MAN KAPUAS - TEMPAT LAHIRNYA PARA JUARA
+                                <span class="ml-3">🏫</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const participants = [
+            // FINALISTS
+            { name: "Muhammad Nadzhar", class: "XI-9", status: "Finalist", register: "76584" },
+            { name: "Helsa Cahlya Mentari", class: "XI-3", status: "Finalist", register: "76492" },
+            { name: "Denis Arianto Supramaji", class: "XI-4", status: "Finalist", register: "12138" },
+            { name: "Zulfa Mahya Mufidah Susanto", class: "XI-4", status: "Finalist", register: "64832" },
+            { name: "Nabila Wati", class: "XI-4", status: "Finalist", register: "10374" },
+            { name: "Rama Dhia Anas Radithya", class: "XI-5", status: "Finalist", register: "75830" },
+            // ELIMINATED
+            { name: "Septiany Ramadhaniah", class: "XI-5", status: "Eliminated", register: "74529" },
+            { name: "Ahmad Nur Rasyid", class: "XI-5", status: "Eliminated", register: "75420" },
+            { name: "Mira Maulida", class: "XI-9", status: "Eliminated", register: "54632" }
+        ];
+
+        // Dramatic countdown
+        let countdown = 5;
+        const countdownElement = document.getElementById('countdownNumber');
+        const countdownScreen = document.getElementById('countdownScreen');
+        const mainContent = document.getElementById('mainContent');
+
+        const countdownInterval = setInterval(() => {
+            countdown--;
+            if (countdown > 0) {
+                countdownElement.textContent = countdown;
+                countdownElement.style.color = countdown <= 2 ? "#ef4444" : "#fbbf24";
+            } else if (countdown === 0) {
+                countdownElement.textContent = "MULAI!";
+                countdownElement.style.color = "#10b981";
+            } else {
+                clearInterval(countdownInterval);
+                countdownScreen.style.opacity = "0";
+                setTimeout(() => {
+                    countdownScreen.style.display = "none";
+                    mainContent.classList.remove('hidden-content');
+                    mainContent.classList.add('final-reveal');
+                }, 800);
+            }
+        }, 1200);
+
+        function createFinalistCard(participant, index) {
+            return `
+                <div class="reveal-card finalist-card rounded-3xl p-8 text-white shadow-2xl border border-green-400 border-opacity-30 relative" style="animation-delay: ${index * 0.3}s">
+                    <div class="text-center relative z-10">
+                        <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-yellow-400 bg-opacity-30 flex items-center justify-center crown-animation">
+                            <div class="text-3xl">👑</div>
+                        </div>
+                        
+                        <h3 class="font-black text-2xl mb-3 tracking-wide">${participant.name}</h3>
+                        <div class="flex justify-center items-center space-x-3 text-sm opacity-90 mb-6">
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full font-medium">Kelas ${participant.class}</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full font-medium">No. ${participant.register}</span>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-15 rounded-2xl py-6 px-4 mb-6">
+                            <div class="font-black text-xl mb-3 text-yellow-300">
+                                🎉 FINALIS! 🎉
+                            </div>
+                            <div class="text-sm leading-relaxed mb-4">
+                                Selamat! Anda berhasil masuk ke <strong>GRAND FINAL</strong>! 
+                                Tunjukkan kehebatan Anda di panggung terakhir!
+                            </div>
+                            <div class="inline-block bg-yellow-400 bg-opacity-30 text-yellow-100 px-4 py-2 rounded-full text-xs font-bold">
+                                ⭐ GRAND FINALIST ⭐
+                            </div>
+                        </div>
+                        
+                        <div class="text-xs text-green-200 italic">
+                            "Perjalanan menuju puncak dimulai dari sini!"
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function createEliminatedCard(participant, index) {
+            return `
+                <div class="reveal-card eliminated-card rounded-3xl p-8 text-white shadow-2xl border border-red-400 border-opacity-30" style="animation-delay: ${index * 0.3}s">
+                    <div class="text-center">
+                        <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-pink-400 bg-opacity-30 flex items-center justify-center">
+                            <div class="text-3xl">🌸</div>
+                        </div>
+                        
+                        <h3 class="font-black text-2xl mb-3 tracking-wide">${participant.name}</h3>
+                        <div class="flex justify-center items-center space-x-3 text-sm opacity-90 mb-6">
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full font-medium">Kelas ${participant.class}</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full font-medium">No. ${participant.register}</span>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-15 rounded-2xl py-6 px-4 mb-6">
+                            <div class="font-black text-xl mb-3 text-pink-300">
+                                💝 TERIMA KASIH 💝
+                            </div>
+                            <div class="text-sm leading-relaxed mb-4">
+                                Perjuangan Anda sangat berarti. Meskipun tidak melanjutkan ke grand final, 
+                                semangat dan dedikasi Anda telah menginspirasi banyak orang.
+                            </div>
+                            <div class="inline-block bg-pink-400 bg-opacity-30 text-pink-100 px-4 py-2 rounded-full text-xs font-bold">
+                                💪 PEJUANG SEJATI 💪
+                            </div>
+                        </div>
+                        
+                        <div class="text-xs text-red-200 italic">
+                            "Setiap akhir adalah awal yang baru."
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function startDramaticReveal() {
+            const button = document.getElementById('revealButton');
+            const resultsSection = document.getElementById('resultsSection');
+            
+            button.style.display = 'none';
+            resultsSection.classList.remove('hidden-content');
+            resultsSection.classList.add('dramatic-reveal');
+            
+            // Populate finalists
+            const finalistsContainer = document.getElementById('finalistsContainer');
+            const finalists = participants.filter(p => p.status === 'Finalist');
+            finalistsContainer.innerHTML = finalists.map((p, i) => createFinalistCard(p, i)).join('');
+            
+            // Populate eliminated
+            const eliminatedContainer = document.getElementById('eliminatedContainer');
+            const eliminated = participants.filter(p => p.status === 'Eliminated');
+            eliminatedContainer.innerHTML = eliminated.map((p, i) => createEliminatedCard(p, i)).join('');
+            
+            // Trigger card animations
+            setTimeout(() => {
+                document.querySelectorAll('.reveal-card').forEach(card => {
+                    card.classList.add('show');
+                });
+            }, 500);
+            
+            // Scroll to results
+            setTimeout(() => {
+                resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 1000);
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'976adf7877b3a085',t:'MTc1NjQ1ODE4Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
