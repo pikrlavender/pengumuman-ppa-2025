@@ -14,33 +14,26 @@
         }
         
         .gradient-bg {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 8s ease-in-out infinite;
-        }
-        
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
         }
         
         .dramatic-countdown {
-            font-size: 8rem;
+            font-size: 6rem;
             font-weight: 900;
-            text-shadow: 0 0 50px rgba(255, 255, 255, 0.8);
-            animation: dramaticPulse 1s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+            animation: gentlePulse 2s ease-in-out infinite;
         }
         
-        @keyframes dramaticPulse {
-            0%, 100% { transform: scale(1); filter: brightness(1); }
-            50% { transform: scale(1.1); filter: brightness(1.3); }
+        @keyframes gentlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
         
         .typewriter-dramatic {
             overflow: hidden;
-            border-right: 4px solid #fbbf24;
+            border-right: 3px solid #fbbf24;
             white-space: nowrap;
-            animation: typing 4s steps(50, end), blink-caret 1s step-end infinite;
+            animation: typing 3s steps(40, end), blink-caret 1s step-end infinite;
         }
         
         @keyframes typing {
@@ -54,110 +47,54 @@
         }
         
         .reveal-card {
-            transform: translateY(100px) rotateX(45deg);
+            transform: translateY(50px);
             opacity: 0;
-            transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: all 0.8s ease-out;
         }
         
         .reveal-card.show {
-            transform: translateY(0) rotateX(0deg);
+            transform: translateY(0);
             opacity: 1;
         }
         
         .finalist-card {
-            background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
-            animation: successGlow 3s ease-in-out infinite;
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
         }
         
-        .finalist-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            animation: shine 3s ease-in-out infinite;
-        }
-        
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-            100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-        }
-        
-        @keyframes successGlow {
-            0%, 100% { box-shadow: 0 0 30px rgba(16, 185, 129, 0.4); }
-            50% { box-shadow: 0 0 60px rgba(16, 185, 129, 0.8); }
+        .finalist-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
+            transition: all 0.3s ease;
         }
         
         .eliminated-card {
-            background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%);
-            animation: eliminatedPulse 4s ease-in-out infinite;
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
         }
         
-        @keyframes eliminatedPulse {
-            0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(220, 38, 38, 0.6); }
+        .eliminated-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(220, 38, 38, 0.4);
+            transition: all 0.3s ease;
         }
         
         .crown-animation {
-            animation: crownFloat 3s ease-in-out infinite;
+            animation: gentleFloat 4s ease-in-out infinite;
         }
         
-        @keyframes crownFloat {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(5deg); }
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
         }
         
         .dramatic-reveal {
-            animation: dramaticReveal 2s ease-out forwards;
+            animation: smoothReveal 1s ease-out forwards;
         }
         
-        @keyframes dramaticReveal {
-            0% { 
-                opacity: 0; 
-                transform: scale(0.3) rotateY(180deg);
-                filter: blur(10px);
-            }
-            50% {
-                opacity: 0.7;
-                transform: scale(1.1) rotateY(90deg);
-                filter: blur(5px);
-            }
-            100% { 
-                opacity: 1; 
-                transform: scale(1) rotateY(0deg);
-                filter: blur(0px);
-            }
-        }
-        
-        .tension-build {
-            animation: tensionBuild 5s ease-in-out infinite;
-        }
-        
-        @keyframes tensionBuild {
-            0%, 100% { transform: scale(1); filter: brightness(1); }
-            25% { transform: scale(1.02); filter: brightness(1.1); }
-            50% { transform: scale(0.98); filter: brightness(0.9); }
-            75% { transform: scale(1.01); filter: brightness(1.05); }
-        }
-        
-        .spotlight {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: spotlight 6s ease-in-out infinite;
-            pointer-events: none;
-        }
-        
-        @keyframes spotlight {
-            0%, 100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.3; }
-            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.6; }
+        @keyframes smoothReveal {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .hidden-content {
@@ -165,46 +102,25 @@
         }
         
         .final-reveal {
-            animation: finalReveal 1.5s ease-out forwards;
+            animation: finalReveal 1s ease-out forwards;
         }
         
         @keyframes finalReveal {
-            from { opacity: 0; transform: translateY(50px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: #fbbf24;
-            border-radius: 50%;
-            animation: particle 4s ease-in-out infinite;
-        }
-        
-        @keyframes particle {
-            0%, 100% { opacity: 0; transform: translateY(0px); }
-            50% { opacity: 1; transform: translateY(-100px); }
         }
     </style>
 </head>
 <body class="gradient-bg min-h-screen">
-    <!-- Particles -->
-    <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
-    <div class="particle" style="top: 30%; right: 15%; animation-delay: 1s;"></div>
-    <div class="particle" style="bottom: 40%; left: 20%; animation-delay: 2s;"></div>
-    <div class="particle" style="bottom: 20%; right: 25%; animation-delay: 3s;"></div>
-
     <!-- Dramatic Countdown Screen -->
     <div id="countdownScreen" class="fixed inset-0 flex items-center justify-center z-50 bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900">
-        <div class="spotlight" style="top: 50%; left: 50%;"></div>
-        <div class="text-center text-white relative z-10">
+        <div class="text-center text-white">
             <h1 class="text-2xl md:text-4xl font-bold mb-8 typewriter-dramatic opacity-90">
                 PENGUMUMAN RESMI AKAN DIMULAI...
             </h1>
             <div id="countdownNumber" class="dramatic-countdown text-yellow-400 mb-8">5</div>
-            <div class="text-lg md:text-xl opacity-70 tension-build">
-                Bersiaplah untuk momen bersejarah
+            <div class="text-lg md:text-xl opacity-70">
+                Bersiaplah untuk momen yang ditunggu-tunggu
             </div>
             <div class="mt-8 text-sm opacity-50">
                 🎭 Detik-detik penentuan 🎭
@@ -215,10 +131,8 @@
     <!-- Main Content -->
     <div id="mainContent" class="hidden-content">
         <!-- Dramatic Header -->
-        <header class="text-center py-20 px-4 relative">
-            <div class="spotlight" style="top: 30%; left: 50%;"></div>
-            
-            <div class="relative z-10">
+        <header class="text-center py-20 px-4">
+            <div>
                 <!-- Crown Animation -->
                 <div class="w-32 h-32 mx-auto mb-8 crown-animation">
                     <div class="w-full h-full rounded-full bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-500 flex items-center justify-center shadow-2xl relative overflow-hidden">
@@ -240,7 +154,7 @@
                 <!-- Dramatic Date -->
                 <div class="mb-8">
                     <div class="inline-block bg-gradient-to-r from-red-600 to-red-700 rounded-full px-8 py-3 mb-6 shadow-2xl">
-                        <span class="text-lg text-white font-bold">⚡ HARI PENENTUAN: 29 Agustus 2025 ⚡</span>
+                        <span class="text-lg text-white font-bold">⚡ HARI PENENTUAN: 29 AGUSTUS 2025 ⚡</span>
                     </div>
                 </div>
                 
@@ -265,7 +179,7 @@
                     <div class="text-center">
                         <div class="text-4xl font-black text-red-400 mb-2">3</div>
                         <div class="text-sm text-gray-300 font-medium">FINALIS</div>
-                        <div class="text-xs text-red-300">Tereleminasi</div>
+                        <div class="text-xs text-red-300">TERELEMINASI</div>
                     </div>
                     <div class="text-center">
                         <div class="text-4xl font-black text-blue-400 mb-2">9</div>
@@ -333,10 +247,8 @@
 
         <!-- Epic Footer -->
         <div class="max-w-6xl mx-auto px-4 pb-20">
-            <div class="bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 rounded-3xl p-12 text-center border border-yellow-400 border-opacity-30 relative overflow-hidden">
-                <div class="spotlight" style="top: 50%; left: 50%;"></div>
-                
-                <div class="relative z-10">
+            <div class="bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 rounded-3xl p-12 text-center border border-yellow-400 border-opacity-30">
+                <div>
                     <h3 class="text-2xl md:text-4xl font-black text-white mb-8 flex items-center justify-center">
                         <span class="mr-4">🎭</span>
                         PESAN
@@ -346,8 +258,8 @@
                     <div class="space-y-8 text-gray-200">
                         <div class="bg-black bg-opacity-30 rounded-2xl p-8 border-l-4 border-yellow-400">
                             <p class="text-lg leading-relaxed font-medium">
-                                "Hari ini, sejarah baru telah terukir. Enam nama telah dipilih untuk mewakili 
-                                kelas masing-masing di panggung grand final. Mereka adalah cerminan dari dedikasi, 
+                                "Hari ini, sejarah baru telah terukir di MAN Kapuas. Enam nama telah dipilih untuk mewakili 
+                                kebanggaan sekolah di panggung grand final. Mereka adalah cerminan dari dedikasi, 
                                 kerja keras, dan semangat pantang menyerah."
                             </p>
                         </div>
@@ -389,12 +301,12 @@
                                     <p class="text-sm text-gray-400 mb-2">Dengan penuh kebanggaan,</p>
                                     <p class="text-lg font-bold text-white">Panitia Seleksi Putra & Putri Aliyah</p>
                                     <p class="text-sm text-gray-400">MAN Kapuas 2025</p>
-                                    <p class="text-xs text-yellow-400 mt-2">🏆 "Menciptakan Kisah Baru" 🏆</p>
+                                    <p class="text-xs text-yellow-400 mt-2">🏆 "Menciptakan Generasi Emas" 🏆</p>
                                 </div>
                                 <div class="text-right">
                                     <p class="text-sm text-gray-400 mb-2">Kapuas, 29 Agustus 2025</p>
                                     <div class="w-24 h-12 bg-yellow-400 bg-opacity-20 rounded-lg flex items-center justify-center border border-yellow-400 border-opacity-50">
-                                        <span class="text-sm text-yellow-300 font-bold">✍️ RESMI</span>
+                                        <span class="text-sm text-yellow-300 font-bold">✍️ Ketua Pelaksana - Ridho</span>
                                     </div>
                                 </div>
                             </div>
@@ -403,7 +315,7 @@
                         <div class="mt-8 pt-6 border-t border-yellow-400 border-opacity-30">
                             <p class="text-sm text-gray-400 flex items-center justify-center font-medium">
                                 <span class="mr-3">🏫</span>
-                                MAN KAPUAS - TEMPAT LAHIRNYA PARA JUARA
+                                MAN KAPUAS - TEMPAT LAHIRNYA PARA GENERASI HEBAT
                                 <span class="ml-3">🏫</span>
                             </p>
                         </div>
@@ -419,13 +331,13 @@
             { name: "Muhammad Nadzhar", class: "XI-9", status: "Finalist", register: "76584" },
             { name: "Helsa Cahlya Mentari", class: "XI-3", status: "Finalist", register: "76492" },
             { name: "Denis Arianto Supramaji", class: "XI-4", status: "Finalist", register: "12138" },
-            { name: "Zulfa Mahya Mufidah Susanto", class: "XI-4", status: "Finalist", register: "64832" },
+            { name: "Mira Maulida", class: "XI-9", status: "Finalist", register: "54632" },
             { name: "Nabila Wati", class: "XI-4", status: "Finalist", register: "10374" },
             { name: "Rama Dhia Anas Radithya", class: "XI-5", status: "Finalist", register: "75830" },
             // ELIMINATED
             { name: "Septiany Ramadhaniah", class: "XI-5", status: "Eliminated", register: "74529" },
             { name: "Ahmad Nur Rasyid", class: "XI-5", status: "Eliminated", register: "75420" },
-            { name: "Mira Maulida", class: "XI-9", status: "Eliminated", register: "54632" }
+            { name: "Zulfa Mahya Mufidah Susanto", class: "XI-4", status: "Eliminated", register: "64832" }
         ];
 
         // Dramatic countdown
@@ -445,13 +357,14 @@
             } else {
                 clearInterval(countdownInterval);
                 countdownScreen.style.opacity = "0";
+                countdownScreen.style.transition = "opacity 0.5s ease";
                 setTimeout(() => {
                     countdownScreen.style.display = "none";
                     mainContent.classList.remove('hidden-content');
                     mainContent.classList.add('final-reveal');
-                }, 800);
+                }, 500);
             }
-        }, 1200);
+        }, 1000);
 
         function createFinalistCard(participant, index) {
             return `
@@ -541,12 +454,13 @@
             const eliminated = participants.filter(p => p.status === 'Eliminated');
             eliminatedContainer.innerHTML = eliminated.map((p, i) => createEliminatedCard(p, i)).join('');
             
-            // Trigger card animations
-            setTimeout(() => {
-                document.querySelectorAll('.reveal-card').forEach(card => {
+            // Reveal cards one by one with delay
+            const allCards = document.querySelectorAll('.reveal-card');
+            allCards.forEach((card, index) => {
+                setTimeout(() => {
                     card.classList.add('show');
-                });
-            }, 500);
+                }, index * 800); // 0.8 second delay between each card
+            });
             
             // Scroll to results
             setTimeout(() => {
@@ -554,5 +468,5 @@
             }, 1000);
         }
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'976adf7877b3a085',t:'MTc1NjQ1ODE4Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'976c34efc27cfd2b',t:'MTc1NjQ3MjE2OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
